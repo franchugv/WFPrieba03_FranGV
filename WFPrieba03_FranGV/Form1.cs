@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WFPrieba03_FranGV
 {
-    public partial class Form1 : Form
+    public partial class FormComboBox : Form
     {
-        public Form1()
+        public FormComboBox()
         {
             InitializeComponent();
         }

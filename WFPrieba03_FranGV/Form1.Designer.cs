@@ -1,6 +1,6 @@
 ﻿namespace WFPrieba03_FranGV
 {
-    partial class Form1
+    partial class FormComboBox
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -93,7 +93,7 @@
             this.BotonCargar.UseVisualStyleBackColor = true;
             this.BotonCargar.Click += new System.EventHandler(this.Controlador_Click);
             // 
-            // Form1
+            // FormComboBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,7 +104,7 @@
             this.Controls.Add(this.TextBoxPelicula);
             this.Controls.Add(this.comboBoxPelicula);
             this.Controls.Add(this.LPelicula);
-            this.Name = "Form1";
+            this.Name = "FormComboBox";
             this.Text = "Ejemplo de uso de ComboBox";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
