@@ -35,7 +35,7 @@ namespace WFPrieba03_FranGV
         private void Controlador_Click(object sender, EventArgs e)
         {
             string pelicula;
-            string[] ListaPeliculas;
+            string[] ListaPeliculas = null;
             string MensajeError = null;
             bool esValido = true;
 
@@ -63,7 +63,11 @@ namespace WFPrieba03_FranGV
 
                         break;
                     case "BotonGuardar":
+                        APIFichero.ApiFicheros.GuardarFichero(ListaPeliculas);
+                        break;
 
+                    case "BotonCargar":
+                        CargarPeliculas();
                         break;
                 }
 
@@ -110,5 +114,6 @@ namespace WFPrieba03_FranGV
         {
             CargarPeliculas();
         }
+
     }
 }

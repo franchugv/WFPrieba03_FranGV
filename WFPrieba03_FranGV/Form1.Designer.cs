@@ -33,6 +33,7 @@
             this.TextBoxPelicula = new System.Windows.Forms.TextBox();
             this.BotonAgregarPelicula = new System.Windows.Forms.Button();
             this.BotonGuardar = new System.Windows.Forms.Button();
+            this.BotonCargar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LPelicula
@@ -86,11 +87,22 @@
             this.BotonGuardar.Text = "Guardar";
             this.BotonGuardar.UseVisualStyleBackColor = true;
             // 
+            // BotonCargar
+            // 
+            this.BotonCargar.Location = new System.Drawing.Point(214, 108);
+            this.BotonCargar.Name = "BotonCargar";
+            this.BotonCargar.Size = new System.Drawing.Size(118, 23);
+            this.BotonCargar.TabIndex = 5;
+            this.BotonCargar.Text = "Cargar";
+            this.BotonCargar.UseVisualStyleBackColor = true;
+            this.BotonCargar.Click += new System.EventHandler(this.Controlador_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 211);
+            this.Controls.Add(this.BotonCargar);
             this.Controls.Add(this.BotonGuardar);
             this.Controls.Add(this.BotonAgregarPelicula);
             this.Controls.Add(this.TextBoxPelicula);
@@ -111,6 +123,7 @@
         private System.Windows.Forms.TextBox TextBoxPelicula;
         private System.Windows.Forms.Button BotonAgregarPelicula;
         private System.Windows.Forms.Button BotonGuardar;
+        private System.Windows.Forms.Button BotonCargar;
     }
 }
 
