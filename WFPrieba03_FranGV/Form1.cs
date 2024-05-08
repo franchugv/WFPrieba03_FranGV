@@ -41,7 +41,7 @@ namespace WFPrieba03_FranGV
 
 
             // Igualar cadena 
-            pelicula = TextBoxPelicula.Text;
+            pelicula = TextBoxPelicula.Text.Trim();
 
             // Inicializar Array al contenido del ComboBox
             ListaPeliculas = comboBoxPelicula.Items.Cast<string>().ToArray();            
@@ -101,12 +101,16 @@ namespace WFPrieba03_FranGV
         }
 
 
-
+        // Usa el API Ficheros
         public void CargarPeliculas()
         {
+
+
+            // Añade al ComboBox todo el contenido del fichero, usando AddRange, que añade el contenido completo del array separado por saltos de línea
             comboBoxPelicula.Items.AddRange(APIFichero.ApiFicheros.ConsultarFichero());
         }
 
+        // Se carga cada vez que se inicia el formulario
         private void Form1_Load(object sender, EventArgs e)
         {
             CargarPeliculas();
