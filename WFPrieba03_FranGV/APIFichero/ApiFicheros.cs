@@ -21,6 +21,8 @@ namespace WFPrieba03_FranGV.APIFichero
             Directory.CreateDirectory(Directorio);
 
             Escritor = File.CreateText(Directorio+NombreFichero);
+
+            Escritor.Close();
         }
 
 
@@ -28,12 +30,13 @@ namespace WFPrieba03_FranGV.APIFichero
 
         public static void ValidarExistencia()
         {
+          
             if (!File.Exists(Directorio+NombreFichero)) CrearFicheros();
         }
 
 
 
-        public static void GuardarFichero(string[] pelicula)
+        public static void EscribirFichero(string[] pelicula)
         {
 
             StreamWriter escritor;
@@ -41,11 +44,18 @@ namespace WFPrieba03_FranGV.APIFichero
             // Validar Esxistencia
             ValidarExistencia();
 
-            // Abrir Fichero
-            escritor = File.AppendText(Directorio+NombreFichero);
+            // Abrir Fichero Sobrescribe
+            escritor = File.CreateText(Directorio+NombreFichero);
 
             // Escribir Fichero
-            escritor.Write(pelicula);
+
+            for (int indice = 0; indice < pelicula.Length; indice++)
+            {
+                escritor.WriteLine(pelicula[indice]);
+
+            }
+
+            escritor.Close();
 
         }
 

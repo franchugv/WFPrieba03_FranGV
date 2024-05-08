@@ -35,39 +35,37 @@ namespace WFPrieba03_FranGV
         private void Controlador_Click(object sender, EventArgs e)
         {
             string pelicula;
-            string[] ListaPeliculas = null;
+            string[] ListaPeliculas;
             string MensajeError = null;
             bool esValido = true;
 
-            Button boton = (Button)sender;
 
+            // Igualar cadena 
+            pelicula = TextBoxPelicula.Text;
+
+            // Inicializar Array al contenido del ComboBox
+            ListaPeliculas = comboBoxPelicula.Items.Cast<string>().ToArray();            
+
+
+
+            Button boton = (Button)sender;
             try
             {
 
 
                 switch (boton.Name)
                 {
+                                            
                     case "BotonAgregarPelicula":
-
-                        // Igualar cadena 
-                        pelicula = TextBoxPelicula.Text;
-
-
-                        if (string.IsNullOrEmpty(pelicula)) throw new Exception("Error: Cadena vacía");
-
-
-                        ListaPeliculas = comboBoxPelicula.Items.Cast<string>().ToArray();
-
-
                         AgregarPeliculas(pelicula, ListaPeliculas);
-
                         break;
                     case "BotonGuardar":
-                        APIFichero.ApiFicheros.GuardarFichero(ListaPeliculas);
+                        APIFichero.ApiFicheros.EscribirFichero(ListaPeliculas);
                         break;
 
                     case "BotonCargar":
                         CargarPeliculas();
+                        BotonCargar.Enabled = false;
                         break;
                 }
 
@@ -90,7 +88,8 @@ namespace WFPrieba03_FranGV
 
         public void AgregarPeliculas(string pelicula, string[] listaPeliculas)
         {
-
+            // Validación
+            if (string.IsNullOrEmpty(pelicula)) throw new Exception("Error: Cadena vacía");
             // Validar repetición
             Validacion.ValidarRepeticion(pelicula, listaPeliculas);
 
@@ -101,9 +100,7 @@ namespace WFPrieba03_FranGV
 
         }
 
-        public static void EscribirFichero(string[] ListaElementos)
-        {
-        }
+
 
         public void CargarPeliculas()
         {
@@ -114,6 +111,7 @@ namespace WFPrieba03_FranGV
         {
             CargarPeliculas();
         }
+
 
     }
 }

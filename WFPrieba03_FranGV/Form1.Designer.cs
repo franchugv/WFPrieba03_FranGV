@@ -48,11 +48,6 @@
             // comboBoxPelicula
             // 
             this.comboBoxPelicula.FormattingEnabled = true;
-            this.comboBoxPelicula.Items.AddRange(new object[] {
-            "Aquaman",
-            "Green Lentern",
-            "Spiderman",
-            "The Batman"});
             this.comboBoxPelicula.Location = new System.Drawing.Point(90, 68);
             this.comboBoxPelicula.Name = "comboBoxPelicula";
             this.comboBoxPelicula.Size = new System.Drawing.Size(325, 21);
@@ -86,6 +81,7 @@
             this.BotonGuardar.TabIndex = 4;
             this.BotonGuardar.Text = "Guardar";
             this.BotonGuardar.UseVisualStyleBackColor = true;
+            this.BotonGuardar.Click += new System.EventHandler(this.Controlador_Click);
             // 
             // BotonCargar
             // 
