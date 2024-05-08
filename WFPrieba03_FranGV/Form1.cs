@@ -65,7 +65,7 @@ namespace WFPrieba03_FranGV
 
                     case "BotonCargar":
                         CargarPeliculas();
-                        BotonCargar.Enabled = false;
+                        BotonCargar.Enabled = false;    // Bloquear boton tras el primer uso .-.
                         break;
                 }
 
