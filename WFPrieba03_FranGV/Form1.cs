@@ -89,7 +89,7 @@ namespace WFPrieba03_FranGV
         public void AgregarPeliculas(string pelicula, string[] listaPeliculas)
         {
             // Validación
-            if (string.IsNullOrEmpty(pelicula)) throw new Exception("Error: Cadena vacía");
+            Validacion.ValidarCadena(pelicula);
             // Validar repetición
             Validacion.ValidarRepeticion(pelicula, listaPeliculas);
 
@@ -115,7 +115,6 @@ namespace WFPrieba03_FranGV
         {
             CargarPeliculas();
         }
-
 
     }
 }

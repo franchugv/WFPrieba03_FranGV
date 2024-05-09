@@ -26,5 +26,10 @@ namespace WFPrieba03_FranGV
             }
         }
 
+        public static void ValidarCadena(string cadena)
+        {
+            if(string.IsNullOrEmpty(cadena)) throw new Exception("Cadena vacía");
+        }
+
     }
 }
